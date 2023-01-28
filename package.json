@@ -1,7 +1,7 @@
 {
-  "name": "postcss-plugin-boilerplate",
-  "description": "PostCSS plugin boilerplate",
-  "repository": "postcss/postcss-plugin-boilerplate",
+  "name": "apply-all",
+  "description": "A postcss plugin to group tailwind apply directives into a single apply directive",
+  "repository": "https://github.com/ExplorerAadi/postcss-plugin-boilerplate",
   "version": "1.0.0",
   "license": "MIT",
   "bin": "cli.js",

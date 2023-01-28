@@ -3,29 +3,25 @@
  */
 module.exports = (opts = {}) => {
   // Work with options here
+  opts = opts || {};
 
   return {
-    postcssPlugin: '${pluginName}',
-    /*
-    Root (root, postcss) {
-      // Transform CSS AST here
-    }
-    */
+    postcssPlugin: "apply-all",
+    // Once(root) {
+    //   root.walkAtRules((atRule) => {
+    //     if (atRule.name === "apply-all") {
+    //       atRule.name = "apply";
+    //       atRule.params = parse(atRule.params).join(" ");
+    //     }
+    //   });
+    // },
+    AtRule: {
+      "apply-all": (atRule) => {
+        atRule.name = "apply";
+        atRule.params = parse(atRule.params).join(" ");
+      },
+    },
+  };
+};
 
-    /*
-    Declaration (decl, postcss) {
-      // The faster way to find Declaration node
-    }
-    */
-
-    /*
-    Declaration: {
-      color: (decl, postcss) {
-        // The fastest way find Declaration node if you know property name
-      }
-    }
-    */
-  }
-}
-
-module.exports.postcss = true
+module.exports.postcss = true;
